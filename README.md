@@ -1,5 +1,9 @@
 # International Data Analysis Olympiad 2019 - online round
 
+## Results
+25th place on the first track (out of 1315 participants)
+
+40 place on the overall leaderboard (sum of track 1 and track 2) (out of 1315 participants)
 ## Task description:
 The task is to build a classiﬁer that would distinguish muons from non-muons in the [LHCb detector.](https://en.wikipedia.org/wiki/LHCb_experiment)
 
