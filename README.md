@@ -8,11 +8,19 @@ The task is to build a classiﬁer that would distinguish muons from non-muons i
 ## Solution description:
 [Stacking](https://www.geeksforgeeks.org/stacking-in-machine-learning/) of 2  models:
 1. LightGBM model trained on lightgbm-encoded categorical features.
-HyperParameters:{'max_depth':7, 'objective':'binary', 'learning_rate':0.2,'num_leaves':64,'min_data_in_leaf':15, 'num_iterations':90}
+
+   HyperParameters:{'max_depth':7, 'objective':'binary', 'learning_rate':0.2,'num_leaves':64,'min_data_in_leaf':15, 'num_iterations':90}
 2. LightGBM model trained on one-hot-encoded categorical features.
-HyperParameters:{'max_depth':9, 'objective':'binary', 'learning_rate':0.2,'num_leaves':128,'min_data_in_leaf':15, 'num_iterations':90}
+
+   HyperParameters:{'max_depth':9, 'objective':'binary', 'learning_rate':0.2,'num_leaves':128,'min_data_in_leaf':15, 'num_iterations':90}
 
 ## Features generation
-1. P_PT = P - PT. The difference between momentum and the component of the momentum, which is parallel to the beam.
-2. P_PT_P = (P - PT) / P. Same as above, normalized by momentum.
-3. closest_{x/y/T/z/dx/dy}_per_station. The {X,Y,Z} positions, timing (T) and uncertainty of the Matched hit coordinates, also known as pad size of the closest hit for each of 4 stations
+1. P_PT = P - PT. 
+
+   The difference between momentum and the component of the momentum, which is parallel to the beam.
+2. P_PT_P = (P - PT) / P. 
+
+   Same as above, normalized by momentum.
+3. closest_{x/y/T/z/dx/dy}_per_station. 
+
+   The {X,Y,Z} positions, timing (T) and uncertainty of the Matched hit coordinates, also known as pad size of the closest hit for each of 4 stations
