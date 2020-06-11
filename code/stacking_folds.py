@@ -7,6 +7,16 @@ from sklearn.model_selection import KFold
 def train_lgb(train_df: pd.DataFrame, test_df: pd.DataFrame,
               train_features: list, categorical_features: list, 
               hyper_parameters: dict, n_folds: int = 5):
+    """
+    Train Lightgbm model using k-folds cross-validation for stacking method.
+    :param train_df: Train Dataframe
+    :param test_df: Test Dataframe
+    :param train_features: names of training features
+    :param categorical_features: names of categorical features
+    :param hyper_parameters: lightgbm hyperparameters
+    :param n_folds: number of folds for k-folds
+    :return: y_validation, validation_predictions, mean_predictions
+    """
     
     kf = KFold(n_splits = n_folds, random_state = 41, shuffle = True)
     
@@ -16,8 +26,8 @@ def train_lgb(train_df: pd.DataFrame, test_df: pd.DataFrame,
     
     for train_index, test_index in kf.split(train_df):
 
-        X_train, X_val = train_concat.loc[train_index], train_concat.loc[test_index]
-        y_train, y_val = train_concat.label[train_index], train_concat.label[test_index]
+        X_train, X_val = train_df.loc[train_index], train_df.loc[test_index]
+        y_train, y_val = train_df.label[train_index], train_df.label[test_index]
         y_validation.extend(y_val)
 
         train_data = lgb.Dataset(X_train[train_features+categorical_features], 
