@@ -18,6 +18,9 @@ The task is to build a classiﬁer that would distinguish muons from non-muons i
 
    HyperParameters:{'max_depth':9, 'objective':'binary', 'learning_rate':0.2,'num_leaves':128,'min_data_in_leaf':15, 'num_iterations':90}
 
+![Model](./assets/model.png "Model")
+
+
 ## Features generation
 1. P_PT = P - PT. 
 
