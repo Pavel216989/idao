@@ -31,3 +31,17 @@ The task is to build a classiﬁer that would distinguish muons from non-muons i
 3. closest_{x/y/T/z/dx/dy}_per_station. 
 
    The {X,Y,Z} positions, timing (T) and uncertainty of the Matched hit coordinates, also known as pad size of the closest hit for each of 4 stations
+4. abs_MatchedHit_{X/Y}{0/1/2/3}.
+
+   Absolute value of hit {X/Y} coordinates for each of 4 stations.
+
+## Files:
+### Notebooks:
+
+1. closest_hits_generator.ipynb - Generate closest hits features and save to a file
+
+2. LGBM.ipynb - first LGBM model.
+
+3. LGBM_dummies.ipynb - second LGBM model
+
+4. Main.ipynb - meta-model
